@@ -1,5 +1,7 @@
 # WooDNSword Registrant
 
+[![Build Status](https://travis-ci.org/WooDNSword/registrant.svg?branch=master)](https://travis-ci.org/WooDNSword/registrant)
+
 Registrant daemon for the WooDNSword stack
 
 # Documentation
