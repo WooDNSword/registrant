@@ -16,4 +16,4 @@ Registrant daemon for the WooDNSword stack
 
 ## Throughput
 
-[![Throughput Graph](https://graphs.waffle.io/WooDNSword/registrant/throughput.svg)](https://waffle.io/WooDNSword/registrant/metrics)
+[![Throughput Graph](https://graphs.waffle.io/WooDNSword/woodnsword.github.io/throughput.svg)](https://waffle.io/WooDNSword/woodnsword.github.io/metrics)
