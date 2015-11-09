@@ -10,3 +10,9 @@ Registrant daemon for the WooDNSword stack
 
 - [WooDNSword Wiki](https://github.com/WooDNSword/woodnsword.github.io/wiki)
 - [WooDNSword Registrant Wiki](https://github.com/WooDNSword/registrant/wiki)
+
+# Statistics
+
+## Throughput
+
+[![Throughput Graph](https://graphs.waffle.io/WooDNSword/registrant/throughput.svg)](https://waffle.io/WooDNSword/registrant/metrics)
