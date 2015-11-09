@@ -1,5 +1,6 @@
 # WooDNSword Registrant
 
+![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Build Status](https://travis-ci.org/WooDNSword/registrant.svg?branch=master)](https://travis-ci.org/WooDNSword/registrant)
 [![Stories in Ready](https://badge.waffle.io/WooDNSword/registrant.png?label=ready&title=Ready)](https://waffle.io/WooDNSword/registrant)
 
