@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/WooDNSword/registrant.png?label=ready&title=Ready)](https://waffle.io/WooDNSword/registrant)
 # WooDNSword Registrant
 
 [![Build Status](https://travis-ci.org/WooDNSword/registrant.svg?branch=master)](https://travis-ci.org/WooDNSword/registrant)
