@@ -1,3 +1,7 @@
 language: go
 notifications:
   slack: initialabs:fh93InNR1qkaFzjYBBeBIe40
+script:
+  - ./go.test.sh
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
