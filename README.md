@@ -16,6 +16,10 @@ Registrant daemon for the WooDNSword stack
 
 # Statistics
 
+## Code coverage over time
+
+![codecov.io](https://codecov.io/github/WooDNSword/registrant/branch.svg?branch=master)
+
 ## Throughput
 
 [![Throughput Graph](https://graphs.waffle.io/WooDNSword/registrant/throughput.svg)](https://waffle.io/WooDNSword/registrant/metrics)
