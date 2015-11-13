@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-package config
-
-/* TODO: Uncomment this.
-import (
-	"encoding/json"
-)
-*/
-
-type Domain struct {
-	Name string
-}
-
-type Endpoint struct {
-	Address, Port string
-}
-
-type Config struct {
-	Debug     bool
-	Domains   []Domain
-	Registrar Endpoint
-=======
 // Package config contains utilities for dealing with configuration data.
 package config
 
@@ -49,5 +27,4 @@ func Eval(reader io.Reader) (Config, error) {
 	err := dec.Decode(&cfg)
 	
 	return cfg, err
->>>>>>> config-dev
 }
