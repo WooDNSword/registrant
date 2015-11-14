@@ -37,8 +37,8 @@ func TestEval(t *testing.T) {
 		t.Error(err)
 	}
 	
-	// Second test: Determine whether Eval() panics when it receives invalid
-	// test data.
+	// Second test: Determine whether Eval() returns an error when it receives
+	// invalid test data.
 	
 	testData = `blah blah`
 	go writer.Write([]byte(testData))
