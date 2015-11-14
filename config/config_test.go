@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-// TestEval determines whether Eval produces a valid Config object from an
-// ad-hoc example file.
+// TestEval determines whether Eval produces a valid Config object from ad-hoc
+// example data.
 func TestEval(t *testing.T) {
 	var testData string
 	var err error
