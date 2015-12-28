@@ -1,6 +1,7 @@
 package connection
 
 import (
+	"github.com/WooDNSword/registrant/config"
 	"net"
 	"testing"
 )
@@ -23,8 +24,13 @@ func TestConnect(t *testing.T) {
 		go listener.Accept()
 	}()
 
+	endpoint := config.Endpoint{
+		Address: "localhost",
+		Port: port,
+	}
+	
 	// Establish a new connection.
-	_, err := Connect("tcp", "localhost:"+port)
+	_, err := Connect("tcp", endpoint)
 
 	// Fail if the connection was unsuccessful.
 	if err != nil {

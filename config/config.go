@@ -7,19 +7,29 @@ import (
 )
 
 type Domain struct {
-	name string
+	Name string
 }
 
 type Endpoint struct {
-	address, port string
+	Address, Port string
 }
 
 type Config struct {
-	debug     bool
-	domains   []Domain
-	registrar Endpoint
+	Debug     bool
+	Domains   []Domain
+	Registrar Endpoint
 }
 
+// TODO: Move Eval and associated tests into their own repository to conform to
+// DRY principle (it is identical in both registrar and registrant).
+
+/*
+Eval accepts a value of type io.Reader, tries to read all data from it, then
+decodes the data from JSON to a struct `cfg` of type Config.
+
+A tuple containing that struct value `cfg` as well as a value of type `err`,
+denoting whether any issues occurred during decoding, is then returned.
+*/
 func Eval(reader io.Reader) (Config, error) {
 	var cfg Config
 	

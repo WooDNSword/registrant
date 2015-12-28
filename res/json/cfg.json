@@ -1,0 +1,8 @@
+{
+	"debug": true,
+	"domains": [],
+	"registrar": {
+		"address": "localhost",
+		"port": "55555"
+	}
+}

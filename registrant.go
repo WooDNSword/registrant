@@ -2,9 +2,24 @@
 package main
 
 import (
-	"fmt"
+	"github.com/WooDNSword/registrant/config"
+	"github.com/WooDNSword/registrant/connection"
+	"github.com/WooDNSword/registrant/session"
+	"os"
 )
 
 func main() {
-	fmt.Println("Hello, world!")
+	cfgFile, err := os.Open("res/json/cfg.json")
+	if err != nil {
+		panic(err)
+	}
+	
+	cfg, err := config.Eval(cfgFile)
+	if err != nil {
+		panic(err)
+	}
+	
+	registrar := cfg.Registrar
+	
+	connection.Initiate(registrar, session.Handler)
 }
