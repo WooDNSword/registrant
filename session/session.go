@@ -3,12 +3,17 @@
 package session
 
 import (
+	"github.com/WooDNSword/registrant/connection"
 	"net"
 )
 
 func Handler(conn net.Conn) {
 	// TODO: Develop message format struct type.
 	// TODO: Send IDENT message.
-	// TODO: Delete the placeholder "Greetings, ..." message.
-	conn.Write([]byte("Greetings, registrar!"))
+	identMsg := connection.Message{
+		Type: "IDENT",
+		Content: []string{"registrant"},
+	}
+	
+	identMsg.Send(conn)
 }

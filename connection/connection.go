@@ -5,9 +5,45 @@ package connection
 
 import (
 	"github.com/WooDNSword/registrant/config"
+	"encoding/json"
 	"fmt"
+	"io"
 	"net"
 )
+
+// TODO: Document Message struct type.
+type Message struct {
+	Type    string
+	Content []string
+}
+
+// TODO: Document Message.ByteString().
+func (msg Message) ByteString() []byte {
+	msgJson, err := json.Marshal(msg)
+	if err != nil {
+		panic(err)
+	}
+	
+	return msgJson
+}
+
+// TODO: Document Message.Send().
+func (msg Message) Send(conn net.Conn) (int, error) {
+	return conn.Write(msg.ByteString())
+}
+
+// TODO: Document Recv().
+func Recv(reader io.Reader) Message {
+	var msg Message
+	
+	dec := json.NewDecoder(reader)
+	err := dec.Decode(&msg)
+	if err != nil {
+		panic(err)
+	}
+	
+	return msg
+}
 
 // Connect establishes a connection to the supplied endpoint over the specified
 // protocol and returns a net.Conn object as well as an error object.
@@ -38,4 +74,19 @@ func Initiate(endpoint config.Endpoint, connectionHandler func(net.Conn)) {
 	fmt.Println("Connection established with", EndpointToString(endpoint))
 	
 	HandleConnection(connectionHandler, conn)
+}
+
+// TODO: Document ToMessage().
+// This function should probably not be used very often. Currently deprecated.
+// Read() is better suited to the context this function would probably be used
+// in.
+func ToMessage(byteString []byte) Message {
+	var msg Message
+	
+	err := json.Unmarshal(byteString, &msg)
+	if err != nil {
+		panic(err)
+	}
+	
+	return msg
 }
