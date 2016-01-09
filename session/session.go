@@ -16,4 +16,6 @@ func Handler(conn net.Conn) {
 	}
 	
 	identMsg.Send(conn)
+	
+	// TODO: Receive and respond to post-IDENT STATUS message.
 }
