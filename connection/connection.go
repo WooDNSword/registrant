@@ -83,18 +83,3 @@ func Initiate(endpoint config.Endpoint, connectionHandler func(net.Conn)) {
 	
 	HandleConnection(connectionHandler, conn)
 }
-
-// TODO: Document ToMessage().
-// This function should probably not be used very often. Currently deprecated.
-// Read() is better suited to the context this function would probably be used
-// in.
-func ToMessage(byteString []byte) Message {
-	var msg Message
-	
-	err := json.Unmarshal(byteString, &msg)
-	if err != nil {
-		panic(err)
-	}
-	
-	return msg
-}
