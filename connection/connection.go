@@ -11,6 +11,8 @@ import (
 	"net"
 )
 
+// TODO: Move Message struct type to shared repository (exists in registrar
+// codebase as well).
 // TODO: Document Message struct type.
 type Message struct {
 	Type    string
