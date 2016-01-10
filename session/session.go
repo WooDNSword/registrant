@@ -8,8 +8,6 @@ import (
 )
 
 func Handler(conn net.Conn) {
-	// TODO: Develop message format struct type.
-	// TODO: Send IDENT message.
 	identMsg := connection.Message{
 		Type: "IDENT",
 		Content: []string{"registrant"},
