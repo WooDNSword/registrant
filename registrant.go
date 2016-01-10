@@ -13,13 +13,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	cfg, err := config.Eval(cfgFile)
 	if err != nil {
 		panic(err)
 	}
-	
+
 	registrar := cfg.Registrar
-	
+
 	connection.Initiate(registrar, session.Handler)
 }

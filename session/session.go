@@ -9,11 +9,11 @@ import (
 
 func Handler(conn net.Conn) {
 	identMsg := connection.Message{
-		Type: "IDENT",
+		Type:    "IDENT",
 		Content: []string{"registrant"},
 	}
-	
+
 	identMsg.Send(conn)
-	
+
 	// TODO: Receive and respond to post-IDENT STATUS message.
 }

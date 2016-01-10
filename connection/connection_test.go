@@ -26,9 +26,9 @@ func TestConnect(t *testing.T) {
 
 	endpoint := config.Endpoint{
 		Address: "localhost",
-		Port: port,
+		Port:    port,
 	}
-	
+
 	// Establish a new connection.
 	_, err := Connect("tcp", endpoint)
 

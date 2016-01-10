@@ -10,14 +10,14 @@ import (
 func TestEval(t *testing.T) {
 	var testData string
 	var err error
-	
+
 	// Define an IO pipe to send/receive data locally
 	reader, writer := io.Pipe()
 	defer reader.Close()
 	defer writer.Close()
-	
+
 	// First test: Determine whether Eval() produces results from test data.
-	
+
 	testData = `
 		{
 			"debug": true,
@@ -31,18 +31,18 @@ func TestEval(t *testing.T) {
 		}
 	`
 	go writer.Write([]byte(testData))
-	
+
 	_, err = Eval(reader)
 	if err != nil {
 		t.Error(err)
 	}
-	
+
 	// Second test: Determine whether Eval() returns an error when it receives
 	// invalid test data.
-	
+
 	testData = `blah blah`
 	go writer.Write([]byte(testData))
-	
+
 	_, err = Eval(reader)
 	if err == nil {
 		t.Error("Eval() did not produce an error when expected to.")

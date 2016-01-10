@@ -4,9 +4,9 @@
 package connection
 
 import (
-	"github.com/WooDNSword/registrant/config"
 	"encoding/json"
 	"fmt"
+	"github.com/WooDNSword/registrant/config"
 	"io"
 	"net"
 )
@@ -27,7 +27,7 @@ func (msg Message) ByteString() []byte {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	return msgJson
 }
 
@@ -43,13 +43,13 @@ func (msg Message) Send(conn net.Conn) (int, error) {
 // TODO: Document Recv().
 func Recv(reader io.Reader) Message {
 	var msg Message
-	
+
 	dec := json.NewDecoder(reader)
 	err := dec.Decode(&msg)
 	if err != nil {
 		panic(err)
 	}
-	
+
 	return msg
 }
 
@@ -78,8 +78,8 @@ func Initiate(endpoint config.Endpoint, connectionHandler func(net.Conn)) {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	fmt.Println("Connection established with", EndpointToString(endpoint))
-	
+
 	HandleConnection(connectionHandler, conn)
 }

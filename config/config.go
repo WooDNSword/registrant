@@ -32,10 +32,10 @@ denoting whether any issues occurred during decoding, is then returned.
 */
 func Eval(reader io.Reader) (Config, error) {
 	var cfg Config
-	
+
 	dec := json.NewDecoder(reader)
 	err := dec.Decode(&cfg)
 	// TODO: Panic on err != nil.
-	
+
 	return cfg, err
 }
