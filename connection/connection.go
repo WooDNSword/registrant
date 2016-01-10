@@ -19,6 +19,8 @@ type Message struct {
 	Content []string
 }
 
+// TODO: Move Message.ByteString() to shared repository (exists in registrar
+// codebase as well).
 // TODO: Document Message.ByteString().
 func (msg Message) ByteString() []byte {
 	msgJson, err := json.Marshal(msg)
@@ -29,11 +31,15 @@ func (msg Message) ByteString() []byte {
 	return msgJson
 }
 
+// TODO: Move Message.Send() to shared repository (exists in registrar codebase
+// as well).
 // TODO: Document Message.Send().
 func (msg Message) Send(conn net.Conn) (int, error) {
 	return conn.Write(msg.ByteString())
 }
 
+// TODO: Move Recv() to shared repository (exists in registrar codebase as
+// well).
 // TODO: Document Recv().
 func Recv(reader io.Reader) Message {
 	var msg Message
