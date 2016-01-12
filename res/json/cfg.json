@@ -3,6 +3,6 @@
 	"domains": [],
 	"registrar": {
 		"address": "localhost",
-		"port": "55555"
+		"port": 55555
 	}
 }
