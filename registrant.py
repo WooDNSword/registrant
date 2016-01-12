@@ -41,7 +41,7 @@ def send_msg(conn, msg_dict):
 	json_len = len(json_content)
 	conn.sendall(str(json_len) + json_content)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 	cfg = read_cfg('res/json/cfg.json')
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	sock.connect((cfg['registrar']['address'], cfg['registrar']['port']))
