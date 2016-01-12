@@ -29,7 +29,7 @@ def recv_msg(conn):
 	json_len = int(json_len_buf)
 	
 	# Retrieve raw JSON string.
-	raw_msg = conn.recv(json_len)
+	raw_msg = '{' + conn.recv(json_len)
 	
 	# Return decoded JSON object as dict.
 	return json.loads(raw_msg)
@@ -43,6 +43,9 @@ def send_msg(conn, msg_dict):
 
 if __name__ == '__main__':
 	cfg = read_cfg('res/json/cfg.json')
+	
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	sock.connect((cfg['registrar']['address'], cfg['registrar']['port']))
+	
 	send_msg(sock, msg('IDENT', 'registrant'))
+	msg = recv_msg(sock)
