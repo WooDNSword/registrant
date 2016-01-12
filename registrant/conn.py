@@ -1,4 +1,12 @@
 import json
+import socket
+
+# TODO: Document initiate.
+def initiate(cfg):
+	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	sock.connect((cfg['registrar']['address'], cfg['registrar']['port']))
+	
+	return sock
 
 # TODO: Document message.
 def message(msg_type, *msg_content):
