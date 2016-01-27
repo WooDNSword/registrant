@@ -32,4 +32,4 @@ test-suite wdns-registrant-test
 
 source-repository head
   type:     git
-  location: https://github.com/xnil/registrant
+  location: https://github.com/WooDNSword/registrant
